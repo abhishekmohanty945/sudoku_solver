@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <H1>SUDOKU SOLVER</H1>
+        <script type="text/javascript" src="solver.js"></script>
+    </head>
+    <body>
+        <button onclick="main()"> Solve </button>
+        <div id = "container">
+            <script>
+                $(document).ready(function() {
+                    for(var i = 1; i < 10; i++) {
+                        for(var j = 1; j < 10; j++) {
+                            var input= document.createElement("input")
+                            input.height = 40;
+                            input.width = 40;
+                            input.id = 'r'+ i+j;
+                            input.type = "number"
+                            input.max = '9'
+                            input.min = '1'
+                            $("#container").append(input)
+                        }
+                        $("#container").append("<br>")
+                    }
+                });
+            </script>
+        </div>
+        <div id = "answer">
+            <p id = "row 1"></p>
+            <p id = "row 2"></p>
+            <p id = "row 3"></p>
+            <p id = "row 4"></p>
+            <p id = "row 5"></p>
+            <p id = "row 6"></p>
+            <p id = "row 7"></p>
+            <p id = "row 8"></p>
+            <p id = "row 9"></p>
+        </div>
+        <script>
+            const placeHolder = " ? "
+            for (var i = 1; i <= 9; i++){
+                document.getElementById("row " + String(i)).innerHTML = placeHolder +  "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder
+            }
+        </script>
+    </body>
+</html>
+
