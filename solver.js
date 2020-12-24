@@ -1,16 +1,3 @@
-// const e = null
-
-// const brd2 = [
-//     [1, e, e, e, e, e, e, e, e],
-//     [e, 2, e, e, e, e, e, e, e],
-//     [e, e, 3, e, e, e, e, e, e],
-//     [e, e, e, 4, e, e, e, e, e],
-//     [e, e, e, e, 5, e, e, e, e],
-//     [e, e, e, e, e, 6, e, e, e],
-//     [e, e, e, e, e, e, 7, e, e],
-//     [e, e, e, e, e, e, e, 8, e],
-//     [e, e, e, e, e, e, e, e, 9]
-// ]
 function main() {
     var brd1 = []
 function takeInput() {
