@@ -156,24 +156,19 @@ function subgrid_valid(board) {
 }
 
 var brdans = solve(brd1)
+console.log(brdans)
 
 if(!validboard(brdans)) {
     for (i = 1; i <= 9; i++){
         document.getElementById("row " + String(i)).innerHTML = "NO SOLUTION EXISTS TO THE GIVEN BOARD"
     } 
 }else{
-    for (var i = 1; i <= 9; i++){
-        var row = ""
-        for (var j = 0; j < 9; j++){
-            if (row == ""){
-                row = row + String(brdans[i - 1][j])
-            }
-            else {
-                row = row + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0" + String(brdans[i - 1][j])
-            }
+    for (var i = 0; i < 9; i++){
+        for (var j = 0; j < 9; j++) {
+            var ans = brdans[i][j]
+            var temp = '#a' + Number(i+1) + Number(j+1) 
+            $(temp).val(ans)
         }
-        document.getElementById("row " + String(i)).innerHTML = row
-    }
+    } 
 }
-
 }
