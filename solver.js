@@ -143,12 +143,25 @@ function subgrid_valid(board) {
 }
 
 var brdans = solve(brd1)
-console.log(brdans)
-
+// console.log(brdans)
+if(!brdans) {
+    for (var i = 0; i < 9; i++){
+        for (var j = 0; j < 9; j++) {
+            var ans = "X"
+            var temp = '#a' + Number(i+1) + Number(j+1) 
+            $(temp).val(ans)
+        }
+    }  
+} else {
 if(!validboard(brdans)) {
-    for (i = 1; i <= 9; i++){
-        document.getElementById("row " + String(i)).innerHTML = "NO SOLUTION EXISTS TO THE GIVEN BOARD"
-    } 
+    // do nothing here
+    // for (var i = 0; i < 9; i++){
+    //     for (var j = 0; j < 9; j++) {
+    //         var ans = "X"
+    //         var temp = '#a' + Number(i+1) + Number(j+1) 
+    //         $(temp).val(ans)
+    //     }
+    // }  
 }else{
     for (var i = 0; i < 9; i++){
         for (var j = 0; j < 9; j++) {
@@ -157,5 +170,6 @@ if(!validboard(brdans)) {
             $(temp).val(ans)
         }
     } 
+}
 }
 }

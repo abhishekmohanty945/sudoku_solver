@@ -1,10 +1,14 @@
 <html>
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <H1>SUDOKU SOLVER</H1>
+        
         <script type="text/javascript" src="solver.js"></script>
 
         <style>
+            .body{
+                height: 100%;
+                width: 100%;
+            }
             .center {
                 align-self: center;
                 border: 3px;
@@ -25,11 +29,26 @@
             .jugad {
                 height: 10px;
             }
+
+            .btn{
+                margin-top: 250px;
+                margin-left: 170px;
+                padding: 4px;
+                height: 40px;
+                width: 90px;
+                background-color:beige;
+                border-radius: 10px;
+                border-style: none;
+                border: none;
+
+                
+            }
         </style>
     </head>
-    <body>
-        <button onclick="main()"> Solve </button>
-        <div>
+    <body class="body">
+      <center><H1>SUDOKU SOLVER</H1></center>  
+        
+        <div class = "main">
             <div id = "container" class="center">
                 <script>
                     $(document).ready(function() {
@@ -48,7 +67,7 @@
                     });
                 </script>
             </div>
-
+            <button onclick="main()" class="btn"> Solve </button> 
             <div id = "answer">
                 <script>
                     $(document).ready(function() {
@@ -56,8 +75,8 @@
                             for(var j = 1; j < 10; j++) {
                                 var input= document.createElement("input")
                                 input.className = "ip"
+                                input.disabled = true;
                                 input.id = 'a'+ i + j;
-                                input.type = "number"
                                 input.max = '9'
                                 input.min = '1'
                                 $("#answer").append(input)
@@ -74,8 +93,7 @@
             for (var i = 1; i <= 9; i++){
                 for(var j = 1; j <= 9; j++) {
                     var temp = '#a' + i + j;
-                    // document.getElementById(temp).innerHTML = Number(1)
-                    $(temp).val("-1")
+                    $(temp).val("?")
                 }
             }
         });
