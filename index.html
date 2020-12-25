@@ -5,7 +5,7 @@
         <script type="text/javascript" src="solver.js"></script>
 
         <style>
-            .body{
+            .main{
                 height: 100%;
                 width: 100%;
             }
@@ -31,8 +31,10 @@
             }
 
             .btn{
-                margin-top: 250px;
-                margin-left: 170px;
+                /* margin-top: 250px;
+                margin-left: 170px; */
+                position: relative;
+
                 padding: 4px;
                 height: 40px;
                 width: 90px;
@@ -40,8 +42,14 @@
                 border-radius: 10px;
                 border-style: none;
                 border: none;
-
-                
+            }
+            .button {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
             }
         </style>
     </head>
@@ -67,7 +75,10 @@
                     });
                 </script>
             </div>
-            <button onclick="main()" class="btn"> Solve </button> 
+            <div class="button">
+                <button onclick="main()" class="btn"> Solve </button> 
+            </div>
+            
             <div id = "answer">
                 <script>
                     $(document).ready(function() {
