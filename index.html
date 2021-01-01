@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!-- <iframe src=http://mp3anime.tk/embed/286 scrolling=no width=400 height=120 frameborder=0></iframe> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         
         <script type="text/javascript" src="solver.js"></script>
@@ -43,61 +44,69 @@
                 border-style: none;
                 border: none;
             }
-            .button {
+            /* .button {
                 margin: 0;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
-            }
+            } */
         </style>
     </head>
     <body class="body">
       <center><H1>SUDOKU SOLVER</H1></center>  
         
         <div class = "main">
-            <div id = "container" class="center">
-                <script>
-                    $(document).ready(function() {
-                        for(var i = 1; i < 10; i++) {
-                            for(var j = 1; j < 10; j++) {
-                                var input= document.createElement("input")
-                                input.className = "ip"
-                                input.id = 'r'+ i+j;
-                                input.type = "number"
-                                input.max = '9'
-                                input.min = '1'
-                                $("#container").append(input)
-                            }
-                            $("#container").append("<br>")
-                        }
-                    });
-                </script>
-            </div>
-            <div class="button">
-                <button onclick="main()" class="btn"> Solve </button> 
-            </div>
-            
-            <div id = "answer">
-                <script>
-                    $(document).ready(function() {
-                        for(var i = 1; i < 10; i++) {
-                            for(var j = 1; j < 10; j++) {
-                                var input= document.createElement("input")
-                                input.className = "ip"
-                                input.disabled = true;
-                                input.id = 'a'+ i + j;
-                                input.max = '9'
-                                input.min = '1'
-                                $("#answer").append(input)
-                            }
-                            $("#answer").append("<br>")
-                        }
-                    });
-                </script>
-            </div>
-            
+            <table cellspacing = "20" style="width: 100%;">
+                <tr>
+                    <td>
+                        <div id = "container" class="center">
+                            <script>
+                                $(document).ready(function() {
+                                    for(var i = 1; i < 10; i++) {
+                                        for(var j = 1; j < 10; j++) {
+                                            var input= document.createElement("input")
+                                            input.className = "ip"
+                                            input.id = 'r'+ i+j;
+                                            input.type = "number"
+                                            input.max = '9'
+                                            input.min = '1'
+                                            $("#container").append(input)
+                                        }
+                                        $("#container").append("<br>")
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <button onclick="main()" class="btn"> Solve </button> 
+                        </div>
+                    </td>
+                    <td>
+                        <div id = "answer">
+                            <script>
+                                $(document).ready(function() {
+                                    for(var i = 1; i < 10; i++) {
+                                        for(var j = 1; j < 10; j++) {
+                                            var input= document.createElement("input")
+                                            input.className = "ip"
+                                            input.disabled = true;
+                                            input.id = 'a'+ i + j;
+                                            input.max = '9'
+                                            input.min = '1'
+                                            $("#answer").append(input)
+                                        }
+                                        $("#answer").append("<br>")
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <script>
             $(document).ready(function() {
